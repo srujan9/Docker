@@ -7,7 +7,10 @@ Virtualization
 In virtualization we have a bare metal(H/w) on which we install our host os.on this host os we install hypervisor(vmware ,oracle virtual box etc).On the hypervisor we install our guest os
 and on these guest os we can install our applications.The disadvantage of the above is architecture
 is the applications running on guest os has to pass through multiple layers in order to access
-the hardware resources.This will result in downgraded performance of the applications
+the hardware resources.This will result in downgraded performance of the applications.
+
+The hypervisor allows multiple VMs to run on a single machine. Each VM includes a full copy of an operating system, the application,
+necessary binaries and libraries - taking up tens of GBs. VMs can also be slow to boot.
 
 Containers
 ===============
@@ -17,9 +20,13 @@ of docker containers.These containers are not allocated any fixed amount of hard
 resources.When the containers are running docker engine decides how much hardware should
 be allocated for each container depending on the processes running in the container
 
+Multiple containers can run on the same machine and share the OS kernel with other containers.
+
 Docker performs process isolation and enbles it to run seperately in userspace
 without bothering about the underlying hardware and os.
 
+For mor information on difference between Docker and virtualization
+www.docker.com/resources/what-container
 
 Installing docker on linux
 ============================
